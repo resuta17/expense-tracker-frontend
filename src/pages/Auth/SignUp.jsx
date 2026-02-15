@@ -7,7 +7,7 @@ import ProfilePhotoSelector from '../../components/inputs/ProfilePhotoSelector';
 import axiosInstance from '../../utils/axiosInstance';
 import { API_PATHS } from '../../utils/apiPaths';
 import { UserContext } from '../../context/userContext';
-import uploadImage from '../../utils/uplaodImage';
+import uploadImage from '../../utils/uploadImage';
 
 
 const SignUp = () => {
@@ -26,7 +26,7 @@ const SignUp = () => {
     const handleSignUp = async (e) => {
       e.preventDefault();
       
-      let profileImageUrl = "";
+      let profileimageurl = "";
       
       if(!fullName) {
         setError("Please enter your name");
@@ -49,14 +49,14 @@ const SignUp = () => {
         //Upload Image if present
         if (profilePic) {
             const imgUploadRes = await uploadImage(profilePic);
-            profileImageUrl = imgUploadRes.imageErl || "";
+            profileimageurl = imgUploadRes.imageUrl || "";
         }
         
         const response = await axiosInstance.post(API_PATHS.AUTH.REGISTER, {
             fullName,
             email,
             password,
-            profileImageUrl
+            profileimageurl
         });
         
         const {token, user} =response.data;
