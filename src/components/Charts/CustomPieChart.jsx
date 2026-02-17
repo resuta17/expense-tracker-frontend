@@ -8,12 +8,12 @@ const CustomPieChart = ({
      label,
      totalAmount,
      colors,
-    showTextAcnhor
+     showTextAnchor 
     
 }) => {
   return (
-    <ResponsiveContainer width="100%" height={300}>
-        <PieChart>
+    <ResponsiveContainer width="100%" height={350}>
+        <PieChart className=''>
             <Pie 
                 data={data}
                 dataKey="amount"
@@ -35,7 +35,7 @@ const CustomPieChart = ({
             <Tooltip content={<CustomTooltip />} />
             <Legend content={<CustomLegend />}/>
             
-            {showTextAcnhor && (
+            {showTextAnchor && (
                 <>
                     <text 
                         x="50%"

@@ -13,16 +13,16 @@ const FinanceOverview = ({ totalBalance, totalIncome, totalExpense }) => {
     
   return (
     <div className='card'>
-        <div className='flex item-center justify-between bt-3'>
-            <h5 className='text-lg'>Financial Overview</h5>
+        <div className='flex item-center justify-between'>
+            <h5 className=' text-lg '>Financial Overview</h5>
         </div>
         
-        <CustomPieChart 
+        <CustomPieChart className="mt-5"
             data={balanceData}
             label="Total Balance"
             totalAmount={`₱${totalBalance}`}
             colors={COLORS}
-            showTextAcnhor
+            showTextAnchor
         />
     </div>
   )

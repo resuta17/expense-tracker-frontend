@@ -1,6 +1,5 @@
-import moment from 'moment'
 import React from 'react'
-import { IoMdDocument } from 'react-icons/io';
+import moment from 'moment';
 import { LuArrowRight } from 'react-icons/lu';
 import TransactionInfoCard from '../Cards/TransactionInfoCard';
 
@@ -20,7 +19,7 @@ const RecentTransactions = ({transactions, OnSeeMore}) => {
                     key={item._id}
                     title={item.type === "expense" ? item.category : item.source}
                     icon={item.icon}
-                    date={moment(item.date).format("DD MMM YYYY")}
+                    date={moment(item.date).format("Do MMM YYYY")}
                     amount={item.amount}
                     type={item.type}
                     hideDeleteBtn
